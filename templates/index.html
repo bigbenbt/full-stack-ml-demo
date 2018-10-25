@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" type="text/css" />
+	<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.css"
+    rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+	<script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.js"></script>
+
+
+</head>
+<form action="/">
+<select name="feature_name">
+	{% for feature in feature_names %}
+		{% if feature == current_feature_name %}
+			<option selected value="{{ feature }}">{{ feature }}</option>
+		{% else %}
+			<option value="{{ feature }}">{{ feature }}</option>
+		{% endif %}
+	{% endfor %}
+</select>
+<input type="submit">
+</form>
+<body>
+    {{ script1|safe }}
+    {{ div1|safe }}
+	<h1>{{title1|safe}}</h1>
+	 {{ script2|safe }}
+    {{ div2|safe }}
+	<h1>Feature Importance for medv</h1>
+	{{div3 | safe}}
+	 {{ script3|safe }}
+  </body>
+</html>
